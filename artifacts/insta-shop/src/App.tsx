@@ -110,15 +110,6 @@ function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <h1 id="hero-title">
-            Keep it
-            <br />
-            <em>insta.</em>
-          </h1>
-          <p className="hero-intro">
-            INSTA SHOP is a small, intentional place to find exactly what you came for.
-            Pick a line below and we will take it from there.
-          </p>
           <div className="business-info" aria-labelledby="business-info-title">
             <p className="business-info-title" id="business-info-title">
               Instagram Account Store — Business Information
