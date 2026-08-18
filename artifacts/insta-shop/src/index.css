@@ -322,22 +322,24 @@
 
 .product-grid {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: .7rem;
 }
 
 .product-card {
   position: relative;
-  min-height: 15rem;
+  min-height: 14rem;
   overflow: hidden;
   border: 1.5px solid hsl(var(--foreground));
-  border-radius: 1.45rem;
-  padding: 1.35rem;
+  border-radius: 1rem;
+  padding: .9rem;
   background: hsl(var(--card));
-  box-shadow: 7px 7px 0 hsl(var(--foreground));
+  box-shadow: 5px 5px 0 hsl(var(--foreground));
   transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
 }
 
-.product-card:hover { transform: translate(-3px, -4px) rotate(-.4deg); box-shadow: 11px 11px 0 hsl(var(--foreground)); }
+.product-card:hover { transform: translate(-3px, -4px) rotate(-.4deg); box-shadow: 8px 8px 0 hsl(var(--foreground)); }
 .product-card.gmail { background: hsl(var(--destructive)); }
 
 .card-topline {
@@ -346,7 +348,7 @@
   justify-content: space-between;
   color: hsl(var(--muted-foreground));
   font-family: var(--app-font-mono);
-  font-size: .6rem;
+  font-size: .48rem;
   letter-spacing: .09em;
   text-transform: uppercase;
 }
@@ -355,8 +357,8 @@
 
 .product-number {
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  width: 1.55rem;
+  height: 1.55rem;
   place-items: center;
   border: 1px solid currentColor;
   border-radius: 50%;
@@ -365,9 +367,9 @@
 .product-card h3 {
   position: relative;
   z-index: 2;
-  margin: 1.45rem 0 .35rem;
+  margin: 1.05rem 0 .35rem;
   font-family: var(--app-font-serif);
-  font-size: clamp(2.25rem, 5vw, 4.1rem);
+  font-size: clamp(1.3rem, 5.5vw, 4.1rem);
   letter-spacing: -.08em;
   line-height: .78;
 }
@@ -378,7 +380,7 @@
   max-width: 245px;
   margin: 0;
   color: hsl(var(--muted-foreground));
-  font-size: .82rem;
+  font-size: .68rem;
   line-height: 1.55;
 }
 
@@ -386,7 +388,7 @@
   margin: 0 0 .35rem;
   color: hsl(var(--foreground));
   font-family: var(--app-font-mono);
-  font-size: .66rem;
+  font-size: .55rem;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -396,34 +398,34 @@
 
 .request-button {
   position: absolute;
-  right: 1.35rem;
-  bottom: 1.35rem;
+  right: .8rem;
+  bottom: .8rem;
   z-index: 3;
   display: inline-flex;
   align-items: center;
-  gap: .6rem;
+  gap: .35rem;
   border: 1.5px solid hsl(var(--foreground));
   border-radius: 999px;
-  padding: .72rem 1rem .72rem 1.15rem;
+  padding: .58rem .7rem .58rem .8rem;
   background: hsl(var(--foreground));
   color: hsl(var(--primary-foreground));
   cursor: pointer;
   font-family: var(--app-font-mono);
-  font-size: .64rem;
+  font-size: .52rem;
   letter-spacing: .05em;
   text-transform: uppercase;
   transition: gap .25s ease, background .25s ease, color .25s ease;
 }
 
 .request-button:hover { gap: .9rem; background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
-.request-button svg { width: .9rem; height: .9rem; }
+.request-button svg { width: .75rem; height: .75rem; }
 
 .shape {
   position: absolute;
-  right: 2.4rem;
-  bottom: 2.2rem;
-  width: 10rem;
-  height: 10rem;
+  right: .9rem;
+  bottom: 1.2rem;
+  width: 6rem;
+  height: 6rem;
   border: 1px solid hsl(var(--foreground) / .25);
   border-radius: 47% 53% 62% 38% / 42% 48% 52% 58%;
   animation: drift 7s ease-in-out infinite;
@@ -626,9 +628,10 @@
   .site-header, .hero, .products-section, .signal-section, .footer { padding-left: 2.75rem; padding-right: 2.75rem; }
   .hero { padding-top: 7rem; padding-bottom: 8rem; }
   .hero-orbit { right: 2rem; top: 6rem; width: 19rem; height: 19rem; }
-  .product-card { padding: 1.8rem; min-height: 17rem; }
+  .product-card { padding: 1.8rem; min-height: 17rem; border-radius: 1.45rem; box-shadow: 7px 7px 0 hsl(var(--foreground)); }
   .product-card h3 { margin-top: 2.2rem; }
   .request-button { right: 1.8rem; bottom: 1.8rem; }
+  .shape { right: 1.6rem; bottom: 1.8rem; width: 8rem; height: 8rem; }
   .signal-inner { grid-template-columns: 1fr 2fr; align-items: start; padding: 3rem 0; }
   .footer { padding-bottom: 3rem; }
 }
@@ -637,8 +640,10 @@
   .header-nav { display: flex; }
   .hero h1 { font-size: clamp(6rem, 12vw, 10.9rem); }
   .hero-intro { margin-top: 2.8rem; }
-  .product-grid { grid-template-columns: 1.1fr .9fr; align-items: end; gap: 1.5rem; }
-  .product-card.gmail { min-height: 16rem; margin-bottom: 1.5rem; }
+  .product-grid { grid-template-columns: 1.1fr .9fr; align-items: stretch; gap: 1.5rem; }
+  .product-card.gmail { min-height: 17rem; margin-bottom: 0; }
+  .product-card:hover { box-shadow: 11px 11px 0 hsl(var(--foreground)); }
+  .shape { width: 10rem; height: 10rem; }
   .products-section { padding-bottom: 10rem; }
 }
 
