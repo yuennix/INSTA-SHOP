@@ -19,6 +19,7 @@ type ProductName = 'INSTA HI2' | 'INSTA GMAIL';
 const products: Array<{
   name: ProductName;
   number: string;
+  stock: number;
   category: string;
   description: string;
   className: string;
@@ -26,6 +27,7 @@ const products: Array<{
   {
     name: 'INSTA HI2',
     number: '01',
+    stock: 2,
     category: 'The direct line',
     description: 'A clear starting point for a quick, considered request.',
     className: 'hi2',
@@ -33,6 +35,7 @@ const products: Array<{
   {
     name: 'INSTA GMAIL',
     number: '02',
+    stock: 2,
     category: 'The everyday line',
     description: 'A familiar route, kept simple from first look to next step.',
     className: 'gmail',
@@ -125,7 +128,7 @@ function Home() {
 
       <section className="products-section" id="offerings" aria-labelledby="offerings-title">
         <div className="section-heading">
-          <h2 id="offerings-title">Choose a line.</h2>
+          <h2 id="offerings-title">AVAILABLE PRODUCTS</h2>
           <p>One tap to start a clear conversation.</p>
         </div>
 
@@ -143,6 +146,9 @@ function Home() {
                 </span>
               </div>
               <h3 data-testid={`text-product-${product.className}`}>{product.name}</h3>
+              <p className="stock-count" data-testid={`text-stock-${product.className}`}>
+                {product.stock} in stock
+              </p>
               <p>{product.description}</p>
               <div className="shape" aria-hidden="true" />
               <button
