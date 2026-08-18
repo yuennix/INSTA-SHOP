@@ -97,9 +97,6 @@ function Home() {
           <button type="button" onClick={() => scrollTo('offerings')} data-testid="button-nav-offerings">
             Offerings
           </button>
-          <button type="button" onClick={() => scrollTo('signal')} data-testid="button-nav-note">
-            The short version
-          </button>
         </nav>
 
         <div className="header-status" data-testid="status-shop-open">
@@ -164,20 +161,6 @@ function Home() {
           ))}
         </div>
       </section>
-
-      <section className="signal-section" id="signal" aria-labelledby="signal-title">
-        <div className="signal-inner">
-          <p className="signal-kicker">The short version / 02</p>
-          <p className="signal-copy" id="signal-title">
-            No maze. No <span>maybe.</span> Just the right next step.
-          </p>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <p className="footer-note">A focused storefront for quick, trustworthy decisions.</p>
-        <p className="footer-meta">INSTA SHOP<br />Two offerings only</p>
-      </footer>
 
       {selectedProduct && (
         <div
