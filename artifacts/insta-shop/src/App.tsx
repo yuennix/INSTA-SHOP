@@ -110,7 +110,6 @@ function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">Two things, done properly</p>
           <h1 id="hero-title">
             Keep it
             <br />
@@ -120,6 +119,17 @@ function Home() {
             INSTA SHOP is a small, intentional place to find exactly what you came for.
             Pick a line below and we will take it from there.
           </p>
+          <div className="business-info" aria-labelledby="business-info-title">
+            <p className="business-info-title" id="business-info-title">
+              Instagram Account Store — Business Information
+            </p>
+            <h2>About Us</h2>
+            <p>
+              We provide uncreated Instagram account for customers who want to create and manage
+              their own accounts. Each account is delivered uncreated allowing the buyer to
+              complete the setup and password reset process themselves.
+            </p>
+          </div>
         </div>
         <div className="hero-orbit" aria-hidden="true">
           <span className="orbit-label">No<br />noise</span>

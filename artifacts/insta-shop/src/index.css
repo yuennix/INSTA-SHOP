@@ -247,6 +247,39 @@
   line-height: 1.65;
 }
 
+.business-info {
+  max-width: 520px;
+  margin: 2rem 0 0 clamp(1rem, 10vw, 8rem);
+  padding-top: 1rem;
+  border-top: 1px solid hsl(var(--foreground) / .2);
+}
+
+.business-info-title {
+  margin: 0 0 .55rem;
+  color: hsl(var(--foreground));
+  font-family: var(--app-font-mono);
+  font-size: .62rem;
+  letter-spacing: .08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.business-info h2 {
+  margin: 0 0 .55rem;
+  font-family: var(--app-font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: -.06em;
+  line-height: 1;
+}
+
+.business-info p:last-child {
+  max-width: 500px;
+  margin: 0;
+  color: hsl(var(--muted-foreground));
+  font-size: .88rem;
+  line-height: 1.6;
+}
+
 .hero-orbit {
   position: absolute;
   top: 4rem;
